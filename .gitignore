@@ -1,10 +1,8 @@
-server/sec.ttt
 server/node_modules
 server/package-lock.json
 server/*.env
 mobile/node_modules
 mobile/package-lock.json
 mobile/*.env
-test.ttt
 package-lock.json
 
