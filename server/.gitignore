@@ -1,0 +1,4 @@
+sec.ttt
+node_modules
+package-lock.json
+*.env
