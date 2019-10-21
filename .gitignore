@@ -4,4 +4,6 @@ server/*.env
 mobile/node_modules
 mobile/package-lock.json
 mobile/*.env
+mobile/ios
+mobile/android
 package-lock.json
