@@ -5,3 +5,5 @@ mobile/node_modules
 mobile/package-lock.json
 mobile/*.env
 test.ttt
+package-lock.json
+
