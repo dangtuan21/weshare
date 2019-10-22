@@ -16,7 +16,7 @@ export const DriverFound = ({ driverInfo, getDriverLocation})=>{
 					<Text style={styles.quotationMarkLeft}>""</Text>
 					<View style={styles.driverBio}>
 						<Text style={styles.bioText}>
-							Hi my name is
+							Hi, my name is
 						</Text>
 						<Text style={styles.nameText}>
 							{driverInfo.firstName} {driverInfo.lastName}
@@ -35,7 +35,7 @@ export const DriverFound = ({ driverInfo, getDriverLocation})=>{
 					</Button>
 				</View>
 			</View>
-			
+
 		</View>
 
 	);

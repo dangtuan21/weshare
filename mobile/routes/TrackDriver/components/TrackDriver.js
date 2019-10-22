@@ -1,56 +1,30 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React from "react";
+import { View } from "react-native";
 
-import {Container} from 'native-base';
-import HeaderComponent from '../../../components/HeaderComponent';
-import MapTrack from './MapTrack';
-import DriverFound from './DriverFound';
-import DriverFooterProfile from './DriverFooterProfile';
-import DriverOnTheWayFooter from './DriverOnTheWayFooter';
-const carMarker = require('../../../assets/img/carMarker.png');
+import { Container } from "native-base";
+import HeaderComponent from "../../../components/HeaderComponent";
+import MapTrack from "./MapTrack";
+import DriverFound from "./DriverFound";
+import DriverFooterProfile from "./DriverFooterProfile";
+import DriverOnTheWayFooter from "./DriverOnTheWayFooter";
 class TrackDriver extends React.Component {
   componentDidMount() {
     this.props.getCurrentLocation();
     this.props.getDriverInfo();
   }
-  //   componentWillReceiveProps(nextProps) {
-  //     if (
-  //       this.props.driverLocation &&
-  //       nextProps.driverLocation !== this.props.driverLocation
-  //     ) {
-  //       this.props.getDistanceFromDriver();
-  //     }
-  //   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('ttt444 nextProps.driverLocation ', nextProps.driverLocation);
     if (nextProps.driverLocation === {}) {
       this.props.getDistanceFromDriver();
     } else return null;
   }
 
   render() {
-    const region = {
-      latitude: 3.146642,
-      longitude: 101.695845,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    };
-
     return (
       <Container>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <HeaderComponent />
-          <Text>Track Driver ttt</Text>
-          {this.props.region && (
-            <MapTrack
-              region={this.props.region}
-              selectedAddress={this.props.selectedAddress}
-              driverLocation={this.props.driverLocation}
-              showCarMaker={this.props.showCarMaker}
-              carMarker={carMarker}
-            />
-          )}
+          {this.props.fare && <MapTrack fare={this.props.fare} />}
           {this.props.distanceFromDriver.rows && (
             <DriverOnTheWayFooter
               driverInfo={this.props.driverInfo}
