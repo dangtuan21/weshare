@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Task List</title>
+    <title>Drivers</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -12,14 +12,15 @@
     />
   </head>
   <body>
-    <h1>Driver Test</h1>
+    <h1>Available drivers</h1>
 
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
           <form id="driverForm">
-            <select class="form-control" id="bookingStatus">
-              <option value="confirmed">Confirmed</option>
+            <select class="form-control" id="driverId">
+              <option value="5da5f5ffe7179a02244cf106">Jack Dom</option>
+              <option value="5dad87fee7179a02244f835f">Teo Ti</option>
             </select>
             <br />
             <input
@@ -101,11 +102,11 @@
             $(".btn").click(function(e) {
               //e.preventDefault();
 
-              var status = $("#bookingStatus").val();
+              var driverId = $("#driverId").val();
               var dataToSend = {
-                driverId: "5da5f5ffe7179a02244cf106", //Jack
+                driverId: driverId,
                 id: passengerData._id,
-                status: status
+                status: "confirmed"
               };
               $.ajax({
                 type: "PUT",
